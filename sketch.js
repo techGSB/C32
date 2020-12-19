@@ -7,8 +7,9 @@ var engine, world;
 var box1, pig1,pig3;
 var backgroundImg,platform;
 var bird, slingshot;
-var score=0;
+
 var gameState = "onSling";
+var score=0;
 
 function preload() {
     backgroundImg = loadImage("sprites/bg.png");
@@ -48,10 +49,15 @@ function setup(){
 
 function draw(){
     if(backgroundImg)
-    {
-        background(backgroundImg);
-    }
     
+        background(backgroundImg);
+    
+    
+    noStroke();
+    fill("brown");
+    textSize(20);
+    text("SCORE: "+score,width-300,40);
+   // console.log(pig1.score());
 
     Engine.update(engine);
     //strokeWeight(4);
@@ -77,11 +83,7 @@ function draw(){
     //log6.display();
     slingshot.display();   
 
-    noStroke();
-    fill("brown");
-    textSize(20);
-    text("SCORE: "+score,width-300,40);
-    console.log(pig1.score());
+    
  
 }
 
